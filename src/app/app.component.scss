@@ -1,0 +1,26 @@
+.header {
+  height: 70px;
+  width: 100%;
+  box-shadow: 0 0 4px rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+
+  .app-name {
+    font-size: 40px;
+    font-family: goldman, serif;
+    color: #333333;
+    display: flex;
+    align-items: center;
+
+    .logo {
+      content: url("../assets/images/star-logo.png");
+      max-height: 50px;
+      margin: 0 10px;
+    }
+  }
+}
+
+
+.container {
+  margin: 1em;
+}

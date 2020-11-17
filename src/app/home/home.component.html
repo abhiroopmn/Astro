@@ -1,0 +1,19 @@
+<h2>
+  Boy/Girl Detail
+</h2>
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col">
+    <label for="lagna">Lagna</label>
+    <astro-lagna-selector id="lagna"></astro-lagna-selector>
+  </div>
+
+  <div class="p-field p-col">
+    <label for="rashi">Rashi</label>
+    <astro-rashi-selector id="rashi"></astro-rashi-selector>
+  </div>
+
+  <div class="p-field p-col">
+    <label for="nakshatra">Nakshatra</label>
+    <astro-nakshatra-selector id="nakshatra" (selectedNakshatra)="setUserNakshatra($event)"></astro-nakshatra-selector>
+  </div>
+</div>

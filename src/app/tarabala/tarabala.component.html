@@ -1,0 +1,13 @@
+<h2>Tarabala {{tarabalaValue ? '(' + tarabalaValue + ' - ' : ''}}
+  <span [ngClass]="tarabalaValue%2 === 0 ? 'safe' : 'danger'">{{tarabalaValue ? (tarabalaValue | tarabala) + ')' : ''}}</span>
+</h2>
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col">
+    <label>Nakshatra</label>
+    <div>{{userNakshatra | nakshatra}}</div>
+  </div>
+  <div class="p-field p-col">
+    <label>Selected Nakshatra</label>
+    <astro-nakshatra-selector (selectedNakshatra)="setNakshatra2($event)"></astro-nakshatra-selector>
+  </div>
+</div>
