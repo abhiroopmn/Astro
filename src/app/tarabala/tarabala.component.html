@@ -1,5 +1,5 @@
-<h2>Tarabala {{tarabalaValue ? '(' + tarabalaValue + ' - ' : ''}}
-  <span [ngClass]="tarabalaValue%2 === 0 ? 'safe' : 'danger'">{{tarabalaValue ? (tarabalaValue | tarabala) + ')' : ''}}</span>
+<h2>Tarabala
+  <span [ngClass]="tarabalaValue%2 === 0 || tarabalaValue === 0 ? 'safe' : 'danger'">{{tarabalaValue ? '(' + tarabalaValue + ' - ' : ''}}{{tarabalaValue ? (tarabalaValue | tarabala) + ')' : ''}}</span>
 </h2>
 <div class="p-fluid p-formgrid p-grid">
   <div class="p-field p-col">

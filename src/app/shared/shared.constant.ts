@@ -59,13 +59,13 @@ export const LAGNAS = [
 ];
 
 export const TARABALA_RESULT = [
-  {label: 'Parama Mythra Taare - Neutral', value: 0},
-  {label: 'Janma Taare - Shaaka dhaana(Tarkari)', value: 1},
-  {label: 'Sampath Taare - Good', value: 2},
-  {label: 'Vipath Taare - Bella dhaana', value: 3},
-  {label: 'Kshema Taare - Good', value: 4},
-  {label: 'Pratyarukh Taare - Uppu dhaana', value: 5},
-  {label: 'Saadhaka Taare - Good', value: 6},
-  {label: 'Vadha Taare - Not Good - Yellu, Chinna, Vastra', value: 7},
-  {label: 'Mitra Taare - Good', value: 8}
+  {label: 'Parama Mythra Thaare - Neutral', value: 0},
+  {label: 'Janma Thaare - Shaaka dhaana(Tarkari)', value: 1},
+  {label: 'Sampath Thaare - Good', value: 2},
+  {label: 'Vipath Thaare - Bella dhaana', value: 3},
+  {label: 'Kshema Thaare - Good', value: 4},
+  {label: 'Pratyarukh Thaare - Uppu dhaana', value: 5},
+  {label: 'Saadhaka Thaare - Good', value: 6},
+  {label: 'Vadha Thaare - Not Good - Yellu, Chinna, Vastra', value: 7},
+  {label: 'Mitra Thaare - Good', value: 8}
 ];
