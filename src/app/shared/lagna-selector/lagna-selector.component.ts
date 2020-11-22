@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SelectItem} from 'primeng/api';
 import {LAGNAS} from '../shared.constant';
 
@@ -8,6 +8,8 @@ import {LAGNAS} from '../shared.constant';
 })
 export class LagnaSelectorComponent {
   @Output() selectedLagna = new EventEmitter();
+  @Input() lagna: string|undefined;
+  @Input() disabled = false;
 
   lagnas: SelectItem[] = LAGNAS;
 

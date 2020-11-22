@@ -4,12 +4,12 @@
 <div class="p-fluid p-formgrid p-grid">
   <div class="p-field p-col">
     <label for="lagna">Lagna</label>
-    <astro-lagna-selector id="lagna"></astro-lagna-selector>
+    <astro-lagna-selector id="lagna" (selectedLagna)="setUserLagna($event)"></astro-lagna-selector>
   </div>
 
   <div class="p-field p-col">
     <label for="rashi">Rashi</label>
-    <astro-rashi-selector id="rashi"></astro-rashi-selector>
+    <astro-rashi-selector id="rashi" (selectedRashi)="setUserRashi($event)"></astro-rashi-selector>
   </div>
 
   <div class="p-field p-col">

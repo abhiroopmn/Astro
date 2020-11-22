@@ -1,3 +1,1 @@
-<p-dropdown id="lagna" placeholder="Select" [options]="lagnas" (onChange)="emitLagna($event)" ></p-dropdown>
-
-
+<p-dropdown id="lagna" [(ngModel)]="lagna" [disabled]="disabled" placeholder="Select" [options]="lagnas" (onChange)="emitLagna($event)" ></p-dropdown>

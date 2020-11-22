@@ -1,0 +1,25 @@
+<h2>
+  Chandrabala
+  <span [ngClass]="(chandrabala | chandrabalaColor) === 1 ? 'safe' : 'danger'">
+    {{chandrabala && chandrabala !== -1 ? '(' + chandrabala + ' - ' : ''}}
+    {{chandrabala && chandrabala !== -1 ? (chandrabala | chandrabala) + ')' : ''}}
+  </span>
+</h2>
+<div class="info-color buffer-top">
+  Note:
+  <ol>
+    <li>It is important to observe Chandrabala in Krishnapaksha and Tarabala in Shuklapaksha</li>
+    <li>Some believe 2, 5, 6, 9 in Shukla paksha are good</li>
+    <li>Some believe 4, 8, 12 in Krishna paksha are good</li>
+  </ol>
+</div>
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col-2">
+    <label>Rashi</label>
+    <div>{{userRashi | rashi}}</div>
+  </div>
+  <div class="p-field p-col-3">
+    <label>Rashi for Selected Nakshatra</label>
+    <astro-rashi-selector (selectedRashi)="setRashi($event)"></astro-rashi-selector>
+  </div>
+</div>

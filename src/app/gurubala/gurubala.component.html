@@ -1,0 +1,25 @@
+<h2>
+  Gurubala
+  <span [ngClass]="(gurubala | gurubalaColor) === 1 ? 'safe' : 'danger'">
+    {{gurubala && gurubala !== -1 ? '(' + gurubala + ' - ' : ''}}
+    {{gurubala && gurubala !== -1 ? (gurubala | gurubala) + ')' : ''}}
+  </span>
+</h2>
+<div class="info-color buffer-top">
+  Note: Even though gurubala is not present, if Jupiter present in following houses, it is considered auspicious
+  <ol>
+    <li>Dhanash & Meena - Own house</li>
+    <li>Kataka - Exhalted</li>
+    <li>Mesha, Vrushchika & Simha - Friendly houses</li>
+  </ol>
+</div>
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col-2">
+    <label>Rashi</label>
+    <div>{{userRashi | rashi}}</div>
+  </div>
+  <div class="p-field p-col-3">
+    <label>Transition of Jupiter in Rashi</label>
+    <astro-rashi-selector (selectedRashi)="setRashi($event)"></astro-rashi-selector>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SelectItem} from 'primeng/api';
 import {NAKSHATRAS} from '../shared.constant';
 
@@ -7,7 +7,9 @@ import {NAKSHATRAS} from '../shared.constant';
   templateUrl: 'nakshatra-selector.component.html'
 })
 export class NakshatraSelectorComponent {
+  @Input() nakshatra: string|undefined;
   @Output() selectedNakshatra = new EventEmitter();
+  @Input() disabled = false;
 
   nakshatras: SelectItem[] = NAKSHATRAS;
 

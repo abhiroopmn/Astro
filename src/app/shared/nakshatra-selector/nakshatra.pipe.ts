@@ -5,7 +5,7 @@ import {NAKSHATRAS} from '../shared.constant';
   name: 'nakshatra'
 })
 export class NakshatraPipe implements PipeTransform {
-  transform(value: string): string {
+  transform(value: string): string | undefined {
     const nakshatra =  NAKSHATRAS.find(x => x.value === value);
     return nakshatra ? nakshatra.label : '';
   }

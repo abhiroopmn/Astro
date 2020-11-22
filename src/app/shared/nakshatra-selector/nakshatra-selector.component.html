@@ -1,1 +1,1 @@
-<p-dropdown id="nakshatra" placeholder="Select" [options]="nakshatras" (onChange)="emitNakshatra($event)" ></p-dropdown>
+<p-dropdown id="nakshatra" [(ngModel)]="nakshatra" [disabled]="disabled" placeholder="Select" [options]="nakshatras" (onChange)="emitNakshatra($event)" ></p-dropdown>

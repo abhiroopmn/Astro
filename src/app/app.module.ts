@@ -15,6 +15,19 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NakshatraPipe } from './shared/nakshatra-selector/nakshatra.pipe';
 import { TarabalaPipe } from './tarabala/tarabala.pipe';
+import {ChandrabalaComponent} from './chandrabala/chandrabala.component';
+import {UserRashiService} from './shared/user-rashi.service';
+import {RashiPipe} from './shared/rashi-selector/rashi.pipe';
+import {ChandrabalaPipe} from './chandrabala/chandrabala.pipe';
+import {ChandrabalaColorPipe} from './chandrabala/chandrabala-color.pipe';
+import {GurubalaComponent} from './gurubala/gurubala.component';
+import {GurubalaPipe} from './gurubala/gurubala.pipe';
+import {GurubalaColorPipe} from './gurubala/gurubalabala-color.pipe';
+import { AccordionModule } from 'primeng/accordion';
+import {PanchakaComponent} from './panchaka/panchaka.component';
+import {ThithiSelectorComponent} from './shared/thithi-selector/thithi-selector.component';
+import {DaySelectorComponent} from './shared/day-selector/day-selector.component';
+import {UserLagnaService} from './shared/user-lagna.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +38,17 @@ import { TarabalaPipe } from './tarabala/tarabala.pipe';
     HomeComponent,
     RashiSelectorComponent,
     NakshatraPipe,
-    TarabalaPipe
+    TarabalaPipe,
+    ChandrabalaComponent,
+    RashiPipe,
+    ChandrabalaPipe,
+    ChandrabalaColorPipe,
+    GurubalaComponent,
+    GurubalaPipe,
+    GurubalaColorPipe,
+    PanchakaComponent,
+    ThithiSelectorComponent,
+    DaySelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,10 +56,12 @@ import { TarabalaPipe } from './tarabala/tarabala.pipe';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DropdownModule
+    DropdownModule,
+    AccordionModule,
+    
   ],
   exports: [],
-  providers: [UserNakshatraService],
+  providers: [UserNakshatraService, UserRashiService, UserLagnaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

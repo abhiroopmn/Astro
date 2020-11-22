@@ -1,0 +1,36 @@
+<h2>
+  Panchaka
+</h2>
+
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col-8">
+    <label for="thithi">Selected Thithi</label>
+    <astro-thithi-selector id="thithi" (selectedThithi)="setThithi($event)"></astro-thithi-selector>
+  </div>
+  <div class="p-field p-col-8">
+    <label for="day">Selected Day</label>
+    <astro-day-selector id="day" (selectedDay)="setDay($event)"></astro-day-selector>
+  </div>
+  <div class="p-field p-col-8">
+    <label for="nakshatra">Selected Nakshatra</label>
+    <astro-nakshatra-selector id="nakshatra" [nakshatra]="userNakshatra" [disabled]="true"></astro-nakshatra-selector>
+  </div>
+  <div class="p-field p-col-8">
+    <label for="lagna">Selected Lagna</label>
+    <astro-lagna-selector id="lagna" [lagna]="userLagna" [disabled]="true" ></astro-lagna-selector>
+  </div>
+  <div class="p-field p-col-8">
+    <label for="dhruvakaSankhya">Dhruvaka Sankhye</label>
+    <input id="dhruvakaSankhya" [disabled]="true" pInputText>
+  </div>
+
+<!--  <div class="p-field p-col">-->
+<!--    <label for="rashi">Rashi</label>-->
+<!--    <astro-rashi-selector id="rashi" (selectedRashi)="setUserRashi($event)"></astro-rashi-selector>-->
+<!--  </div>-->
+
+<!--  <div class="p-field p-col">-->
+<!--    <label for="nakshatra">Nakshatra</label>-->
+<!--    <astro-nakshatra-selector id="nakshatra" (selectedNakshatra)="setUserNakshatra($event)"></astro-nakshatra-selector>-->
+<!--  </div>-->
+</div>
