@@ -1,1 +1,1 @@
-<p-dropdown id="rashi" placeholder="Select" [options]="rashis" (onChange)="emitRashi($event)" ></p-dropdown>
+<p-dropdown id="rashi" [(ngModel)]="rashi" placeholder="Select" [options]="rashis" [disabled]="disabled" (onChange)="emitRashi($event)" ></p-dropdown>

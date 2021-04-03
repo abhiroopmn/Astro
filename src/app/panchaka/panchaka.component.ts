@@ -1,8 +1,6 @@
 import {Component} from '@angular/core';
-import {UserNakshatraService} from '../shared/user-nakshatra.service';
-import {UserLagnaService} from '../shared/user-lagna.service';
-import {LAGNAS, NAKSHATRAS} from '../shared/shared.constant';
-import {SelectItem} from 'primeng/api';
+import {SelectedNakshatraService} from '../shared/selected-nakshatra.service';
+import {SelectedRashiService} from '../shared/selected-rashi.service';
 
 @Component({
   selector: 'astro-panchaka',
@@ -11,29 +9,60 @@ import {SelectItem} from 'primeng/api';
 })
 export class PanchakaComponent {
   thithi = '';
+  thithiValue: number|undefined;
+  selectedDayValue: number|undefined;
+  selectedNakshatraValue: number|undefined;
+  selectedLagnaValue: number|undefined;
+  selectedRashiValue: number|undefined;
   day = '';
-  userNakshatra = '';
+  selectedNakshatra = '';
+  selectedRashi = '';
+  selectedLagna = '';
   userLagna = '';
 
-  constructor(private userNakshatraService: UserNakshatraService, private userLagnaService: UserLagnaService) {
-    this.userNakshatraService.userNakshatra.subscribe(nakshatra => {
-      this.userNakshatra = nakshatra;
+  constructor(private selectedNakshatraService: SelectedNakshatraService, private selectedRashiService: SelectedRashiService) {
+    this.selectedNakshatraService.selectedNakshatra.subscribe(nakshatra => {
+      this.setSelectedNakshatra(nakshatra);
       // this.calculateGurubala();
     });
 
-    this.userLagnaService.userLagna.subscribe(lagna => {
-      this.userLagna = lagna;
+    this.selectedRashiService.selectedRashi.subscribe(rashi => {
+      this.setSelectedRashi(rashi);
       // this.calculateGurubala();
     });
   }
 
   setThithi(thithi: string): void {
+    console.log(thithi);
     this.thithi = thithi;
+    this.thithiValue = parseInt(thithi, 10);
     // this.calculateChandrabala();
   }
 
   setDay(day: string): void {
     this.day = day;
+    this.selectedDayValue = parseInt(day, 10);
     // this.calculateChandrabala();
+  }
+
+  setSelectedNakshatra(nakshatra: string): void {
+    this.selectedNakshatra = nakshatra;
+    if (nakshatra) {
+      this.selectedNakshatraValue = parseInt(nakshatra, 10);
+    }
+  }
+
+  setSelectedLagna(lagna: string): void {
+    this.selectedLagna = lagna;
+    if (lagna) {
+      this.selectedLagnaValue = parseInt(lagna, 10);
+    }
+  }
+
+  setSelectedRashi(rashi: string): void {
+    this.selectedRashi = rashi;
+    if (rashi) {
+      this.selectedRashiValue = parseInt(rashi, 10);
+    }
   }
 }

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {UserRashiService} from '../shared/user-rashi.service';
+import {SelectedRashiService} from '../shared/selected-rashi.service';
 
 @Component({
   selector: 'astro-chandrabala',
@@ -11,7 +12,7 @@ export class ChandrabalaComponent {
   userRashi = '';
   chandrabala = -1;
 
-  constructor(private userRashiService: UserRashiService) {
+  constructor(private userRashiService: UserRashiService, private selectedRashiService: SelectedRashiService) {
     this.userRashiService.userRashi.subscribe(rashi => {
       this.userRashi = rashi;
       this.calculateChandrabala();
@@ -33,5 +34,6 @@ export class ChandrabalaComponent {
   setRashi(rashi: string): void {
     this.rashi = rashi;
     this.calculateChandrabala();
+    this.selectedRashiService.setSelectedRashi(rashi);
   }
 }

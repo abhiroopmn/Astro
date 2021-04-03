@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {UserNakshatraService} from '../shared/user-nakshatra.service';
+import {SelectedNakshatraService} from '../shared/selected-nakshatra.service';
 
 @Component({
   selector: 'astro-tarabala',
@@ -11,7 +12,7 @@ export class TarabalaComponent {
   nakshatra2 = '';
   tarabalaValue = 0;
 
-  constructor(private userNakshatraService: UserNakshatraService) {
+  constructor(private userNakshatraService: UserNakshatraService, private selectedNakshatraService: SelectedNakshatraService) {
     this.userNakshatraService.userNakshatra.subscribe(nakshatra => {
       this.userNakshatra = nakshatra;
       this.calculateTarabala();
@@ -36,5 +37,6 @@ export class TarabalaComponent {
   setNakshatra2(nakshatra: string): void {
     this.nakshatra2 = nakshatra;
     this.calculateTarabala();
+    this.selectedNakshatraService.setSelectedNakshatra(nakshatra);
   }
 }

@@ -1,36 +1,71 @@
 <h2>
-  Panchaka
+  Panchaka - <span class="magenta">Method 1</span>
 </h2>
 
 <div class="p-fluid p-formgrid p-grid">
-  <div class="p-field p-col-8">
-    <label for="thithi">Selected Thithi</label>
-    <astro-thithi-selector id="thithi" (selectedThithi)="setThithi($event)"></astro-thithi-selector>
-  </div>
-  <div class="p-field p-col-8">
-    <label for="day">Selected Day</label>
-    <astro-day-selector id="day" (selectedDay)="setDay($event)"></astro-day-selector>
-  </div>
-  <div class="p-field p-col-8">
-    <label for="nakshatra">Selected Nakshatra</label>
-    <astro-nakshatra-selector id="nakshatra" [nakshatra]="userNakshatra" [disabled]="true"></astro-nakshatra-selector>
-  </div>
-  <div class="p-field p-col-8">
-    <label for="lagna">Selected Lagna</label>
-    <astro-lagna-selector id="lagna" [lagna]="userLagna" [disabled]="true" ></astro-lagna-selector>
-  </div>
-  <div class="p-field p-col-8">
-    <label for="dhruvakaSankhya">Dhruvaka Sankhye</label>
-    <input id="dhruvakaSankhya" [disabled]="true" pInputText>
+  <div class="p-formgroup-inline p-col-12">
+    <div class="p-field p-col-2">
+      <label for="thithi">Selected Thithi</label>
+      <astro-thithi-selector id="thithi" (selectedThithi)="setThithi($event)"></astro-thithi-selector>
+    </div>
+    <div class="p-field p-col-2">
+      <label for="thithiValue">&nbsp;</label>
+      <input type="text" pInputText id="thithiValue" [ngModel]="thithiValue" [disabled]="true">
+    </div>
   </div>
 
-<!--  <div class="p-field p-col">-->
-<!--    <label for="rashi">Rashi</label>-->
-<!--    <astro-rashi-selector id="rashi" (selectedRashi)="setUserRashi($event)"></astro-rashi-selector>-->
-<!--  </div>-->
+  <div class="p-formgroup-inline p-col-12">
+    <div class="p-field p-col-2">
+      <label for="day">Selected Day</label>
+      <astro-day-selector id="day" (selectedDay)="setDay($event)"></astro-day-selector>
+    </div>
+    <div class="p-field p-col-2">
+      <label for="selectedDayValue">&nbsp;</label>
+      <input type="text" pInputText id="selectedDayValue" [ngModel]="selectedDayValue" [disabled]="true">
+    </div>
+  </div>
 
-<!--  <div class="p-field p-col">-->
-<!--    <label for="nakshatra">Nakshatra</label>-->
-<!--    <astro-nakshatra-selector id="nakshatra" (selectedNakshatra)="setUserNakshatra($event)"></astro-nakshatra-selector>-->
-<!--  </div>-->
+  <div class="p-formgroup-inline p-col-12">
+    <div class="p-field p-col-2">
+      <label for="nakshatra">Selected Nakshatra</label>
+      <astro-nakshatra-selector id="nakshatra" [disabled]="true" (selectedNakshatra)="setSelectedNakshatra($event)" [nakshatra]="selectedNakshatra"></astro-nakshatra-selector>
+    </div>
+    <div class="p-field p-col-2">
+      <label for="selectedNakshatraValue">&nbsp;</label>
+      <input type="text" pInputText id="selectedNakshatraValue" [ngModel]="selectedNakshatraValue" [disabled]="true">
+    </div>
+  </div>
+
+  <div class="p-formgroup-inline p-col-12">
+    <div class="p-field p-col-2">
+      <label for="lagna">Selected Lagna</label>
+      <astro-lagna-selector id="lagna" [lagna]="userLagna" (selectedLagna)="setSelectedLagna($event)"></astro-lagna-selector>
+    </div>
+    <div class="p-field p-col-2">
+      <label for="selectedLagnaValue">&nbsp;</label>
+      <input type="text" pInputText id="selectedLagnaValue" [ngModel]="selectedLagnaValue" [disabled]="true">
+    </div>
+  </div>
+
+  <div class="p-formgroup-inline p-col-12">
+    <div class="p-field p-col-2">
+      <label for="dhruvakaSankhya">Dhruvaka Sankhye</label>
+      <astro-rashi-selector [rashi]="selectedLagna" id="dhruvakaSankhya"(selectedRashi)="setSE
+" [disabled]="true"></astro-rashi-selector>
+    </div>
+    <div class="p-field p-col-2">
+      <label for="selectedRashiValue">&nbsp;</label>
+      <input type="text" pInputText id="selectedRashiValue" [ngModel]="selectedRashiValue" [disabled]="true">
+    </div>
+  </div>
+
+  <!--  <div class="p-field p-col">-->
+  <!--    <label for="rashi">Rashi</label>-->
+  <!--    <astro-rashi-selector id="rashi" (selectedRashi)="setUserRashi($event)"></astro-rashi-selector>-->
+  <!--  </div>-->
+
+  <!--  <div class="p-field p-col">-->
+  <!--    <label for="nakshatra">Nakshatra</label>-->
+  <!--    <astro-nakshatra-selector id="nakshatra" (selectedNakshatra)="setUserNakshatra($event)"></astro-nakshatra-selector>-->
+  <!--  </div>-->
 </div>
